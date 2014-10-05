@@ -5,7 +5,7 @@
 
 import sys
 import getopt
-import plotly.plotly as py
+import plotly.plotly as plot 
 from plotly.graph_objs import *
 
 
@@ -75,14 +75,14 @@ def daemon_parser(input_file, outputfile):
 	output.write('\n')
 	output.close()
 
-	py.sign_in('Python-Demo-Account', 'gwt101uhh0')
+	plot.sign_in('Python-Demo-Account', 'gwt101uhh0')
 	xlim = list(range(1,195))	
 	trace0 = Scatter(x=xlim, y=rpd_data, mode='markers')
 	trace1 = Scatter(x=xlim, y=dcd_data, mode='markerss')
 	trace2 = Scatter(x=xlim, y=jdhcpd_data, mode='lines')
 	trace3 = Scatter(x=xlim, y=pppd_data, mode='lines')
 	data = Data([trace0, trace1, trace2, trace3])
-	unique_url = py.plot(data, filename = 'daemons consume ifstate ')
+	unique_url = plot.plot(data, filename = 'daemons consume ifstate ')
 
 
 def main(argv):
